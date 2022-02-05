@@ -1,8 +1,5 @@
-import Maintenance from "../components/Maintenance";
-
 const Page = () => {
-
-    return <Maintenance />
+    return;
 }
 
 export default Page
