@@ -1,8 +1,8 @@
 import Maintenance from "../components/Maintenance";
 
-const IndexPage = () => {
+const Page = () => {
 
     return <Maintenance />
 }
 
-export default IndexPage
+export default Page
