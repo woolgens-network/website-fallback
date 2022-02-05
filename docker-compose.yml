@@ -6,8 +6,19 @@ services:
     build:
       context: frontend
       dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
     volumes:
       - "/app/node_modules"
       - "./:/app"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.website-fallback.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.errorpage.errors.status=400-599"
+      - "traefik.http.middlewares.errorpage.errors.service=website-fallback"
+      - "traefik.http.middlewares.errorpage.errors.query=/"
+      - "traefik.docker.network=traefik"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
