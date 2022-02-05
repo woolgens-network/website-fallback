@@ -1,8 +1,7 @@
 import '../styles/global.css'
-import Maintenance from "../components/Maintenance";
 
-function MyApp() {
-  return <Maintenance />
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
 export default MyApp
