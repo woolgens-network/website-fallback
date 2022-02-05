@@ -11,14 +11,9 @@ services:
       - "./:/app"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.website-fallback.rule=HostRegexp(`{host:.+}`)"
-      - "traefik.http.routers.website-fallback.priority=1"
+      - "traefik.http.routers.website-fallback.rule=Host(`woolgens.net`)"
       - "traefik.http.routers.website-fallback.tls=true"
-      - "traefik.http.routers.website-fallback.middlewares=errorpage"
       - "traefik.http.services.website-fallback.loadbalancer.server.port=3000"
-      - "traefik.http.middlewares.errorpage.errors.status=400-599"
-      - "traefik.http.middlewares.errorpage.errors.service=website-fallback"
-      - "traefik.http.middlewares.errorpage.errors.query=/"
       - "traefik.docker.network=traefik"
     networks:
       - traefik
