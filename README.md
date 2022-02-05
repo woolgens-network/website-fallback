@@ -1,7 +1,6 @@
-# Woolgens NextJS-TS-Scaffold
+# Woolgens Website Fallback
 
-This project uses NextJS, the react framework for production.
-If you want to learn more about NextJS, please visit its website: https://nextjs.org/
+This page is used as the fallback page for all Woolgens websites when they are offline.
 
 ## Usage
 
