@@ -53,6 +53,7 @@ steps:
       password:
         from_secret: SERVER_PASSWORD
       script:
+        - docker-compose down
         - rm -R /home/web/website-fallback
 
   - name: deploy
@@ -85,5 +86,4 @@ steps:
         from_secret: SERVER_PASSWORD
       script:
         - cd /home/web/website-fallback
-        - docker-compose down
         - docker-compose up -d --build
