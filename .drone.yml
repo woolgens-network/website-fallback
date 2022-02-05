@@ -53,8 +53,10 @@ steps:
       password:
         from_secret: SERVER_PASSWORD
       script:
+        - cd /home/web/website-fallback
         - docker-compose down
-        - rm -R /home/web/website-fallback
+        - cd ..
+        - rm -R website-fallback/
 
   - name: deploy
     depends_on: [ delete ]
