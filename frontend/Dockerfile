@@ -6,10 +6,16 @@ ENV PORT 3000
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-EXPOSE 3000
+# Installing dependencies
+COPY package*.json /usr/src/app/
+RUN yarn install
 
 # Copying source files
 COPY . /usr/src/app
 
+# Building app
+RUN yarn build
+EXPOSE 3000
+
 # Running the app
-CMD "node" "server.js"
+CMD "yarn" "start"
