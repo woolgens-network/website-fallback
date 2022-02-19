@@ -1,21 +1,12 @@
-FROM node:12
+FROM node:16
 
-ENV PORT 3000
-
-# Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Installing dependencies
-COPY package*.json /usr/src/app/
-RUN yarn install
+COPY package*.json ./
 
-# Copying source files
-COPY . /usr/src/app
+RUN npm ci --only=production
 
-# Building app
-RUN yarn build
+COPY . .
+
 EXPOSE 3000
-
-# Running the app
-CMD "yarn" "start"
+CMD [ "node", "server.js" ]
