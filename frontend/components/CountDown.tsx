@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "../public/logo.png";
 import Countdown from 'react-countdown';
 
-const DATE = "Saturday, 19 February 2022 22:00:00 GMT";
+const DATE = "Saturday, 20 February 2022 22:00:00 GMT";
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
