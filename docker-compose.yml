@@ -4,7 +4,7 @@ services:
   client:
     stdin_open: true
     build:
-      context: fallback
+      context: frontend
       dockerfile: Dockerfile
     volumes:
       - "/app/node_modules"
