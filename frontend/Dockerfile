@@ -6,11 +6,10 @@ ENV PORT 3000
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+EXPOSE 3000
+
 # Copying source files
 COPY . /usr/src/app
-
-# Building app
-EXPOSE 3000
 
 # Running the app
 CMD "node" "index.js"
