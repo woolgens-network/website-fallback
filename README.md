@@ -1,6 +1,6 @@
 # Woolgens Website Fallback
 
-This page is used as the fallback page for all Woolgens websites when they are offline.
+This page is used as the fallback page for all Woolgens homepage when it is offline.
 
 ## Usage
 
