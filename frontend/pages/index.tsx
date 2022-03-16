@@ -1,7 +1,7 @@
-import CountDown from "../components/CountDown";
+import Maintenance from "../components/Maintenance";
 
 const Page = () => {
-    return <CountDown />
+    return <Maintenance />
 }
 
 export default Page
