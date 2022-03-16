@@ -11,11 +11,11 @@ services:
       - "./:/app"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.website.rule=Host(`woolgens.net`)"
-      - "traefik.http.routers.website.tls=true"
-      - "traefik.http.services.website.loadbalancer.server.port=3000"
+      - "traefik.http.routers.website-fallback.rule=Host(`woolgens.net`)"
+      - "traefik.http.routers.website-fallback.tls=true"
+      - "traefik.http.services.website-fallback.loadbalancer.server.port=3000"
+      - "traefik.http.routers.website-fallback.priority=5"
       - "traefik.docker.network=traefik"
-      - "traefik.http.routers.landingPage.priority=5"
     networks:
       - traefik
 
